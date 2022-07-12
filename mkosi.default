@@ -1,0 +1,233 @@
+[Distribution]
+Distribution=pop
+Release=jammy
+
+[Output]
+Bootable=True
+Output=pop.raw
+
+[Packages]
+BuildPackage=
+	at
+	dfu-programmer
+	efibootmgr
+	ethtool
+	grub-efi-amd64
+	grub-efi-amd64-bin
+	grub-efi-amd64-signed
+	grub-pc
+	grub-pc-bin
+	grub-gfxpayload-lists
+	kernelstub
+	libfl2
+	libx86-1
+	lm-sensors
+	pm-utils
+	pop-hp-vendor
+	pop-hp-vendor-dkms
+	pop-hp-wallpapers
+	postfix
+	powermgmt-base
+	python3-debian
+	python3-distro
+	python3-evdev
+	python3-systemd
+	system76-driver
+	system76-firmware-daemon
+	system76-oled
+	system76-wallpapers
+	vbetool
+	xbacklight
+Packages=
+	linux-system76
+	ubuntu-minimal
+	ubuntu-standard
+
+	#################
+	## POP-DESKTOP ##
+	#################
+
+	# First to avoid dependency issues
+    	adwaita-icon-theme-full
+    	pop-wallpapers
+    	pop-session
+	# Applications
+    	gnome-control-center
+    	gnome-disk-utility
+    	gnome-system-monitor
+    	gnome-terminal
+    	language-selector-gnome
+    	nautilus
+    	pop-gnome-initial-setup
+	# Programs
+    	build-essential
+    	curl
+    	git
+	# Plugins
+    	# brltty FIXME: dependency problems, cannot install
+    	chrome-gnome-shell
+    	fonts-dejavu-core
+    	fonts-freefont-ttf
+    	fonts-liberation
+    	ghostscript-x
+    	gnome-bluetooth
+    	gnome-online-miners
+    	gnome-orca
+    	gnome-menus
+    	gnome-themes-standard
+    	gnome-video-effects
+    	gvfs-backends
+    	gvfs-fuse
+    	ibus-table
+    	inputattach
+    	libatk-adaptor
+    	libcanberra-gtk-module
+    	libegl-mesa0
+    	libglib2.0-bin
+    	libpam-gnome-keyring
+    	libproxy1-plugin-gsettings
+    	libproxy1-plugin-networkmanager
+    	nautilus-sendto
+    	network-manager-pptp-gnome
+    	network-manager-openvpn-gnome
+    	sound-theme-freedesktop
+	# Desktop
+    	gdm3
+    	gnome-shell
+    	xorg
+	# Distribution
+    	pop-default-settings
+    	pop-upgrade
+	# Base
+    	apt-transport-https
+    	avahi-autoipd
+    	avahi-daemon
+    	cryptsetup
+    	dbus-user-session
+    	ecryptfs-utils
+    	glib-networking
+    	gstreamer1.0-plugins-base-apps
+    	libnss-mdns
+    	net-tools
+    	policykit-desktop-privileges
+    	resolvconf
+    	xdg-desktop-portal-gnome
+    	xdg-user-dirs-gtk
+    	xdg-utils
+	# Hardware
+    	acpi-support
+    	alsa-base
+    	bluez
+    	bluez-cups
+    	cups-bsd
+    	cups
+    	fwupd
+    	fwupdate
+    	gstreamer1.0-alsa
+    	ifupdown
+    	laptop-detect
+    	libblockdev-crypto2
+    	libblockdev-mdraid2
+    	libvdpau-va-gl1
+    	lvm2
+    	mesa-va-drivers
+    	mesa-vulkan-drivers
+    	network-manager
+    	openprinting-ppds
+    	pcmciautils
+    	printer-driver-all
+   	rfkill
+    	ubuntu-drivers-common
+    	wireless-tools
+    	vdpau-driver-all
+	# Pipewire
+    	libasound2-plugins
+    	libldacbt-abr2
+    	libldacbt-enc2
+    	libfreeaptx0
+    	libspa-0.2-bluetooth
+    	libspa-0.2-jack
+    	pipewire
+    	pipewire-audio-client-libraries
+    	pipewire-pulse
+    	pulseaudio-utils
+    	wireplumber
+	# Kernel
+    	linux-system76
+	# Fix for slow-opening applications
+    	appmenu-gtk2-module
+	
+	# Applications
+    	baobab
+    	eog
+    	evince
+    	firefox
+    	geary
+    	gedit
+    	gnome-calculator
+    	gnome-calendar
+    	gnome-contacts
+    	gnome-font-viewer
+	gnome-power-manager,
+	gnome-weather,
+	gucharmap,
+	ibus-table-emoji,
+	# io.elementary.sideload FIXME: no source, should probably be removed from pop-desktop itself
+	libavcodec58,
+	libreoffice-calc,
+	libreoffice-impress,
+	libreoffice-writer,
+	pop-shop,
+	pop-transition,
+	popsicle-gtk,
+	seahorse,
+	simple-scan,
+	totem,
+	yelp,
+	# Last to replace mime information
+	file-roller
+	com.github.donadigo.eddy
+	# Programs
+	popsicle
+	# Plugins
+	fonts-noto-color-emoji
+	gnome-remote-desktop
+	gnome-shell-extension-prefs
+	gstreamer1.0-vaapi
+	libreoffice-gnome
+	libreoffice-ogltrans
+	network-manager-config-connectivity-pop
+	sessioninstaller
+	appmenu-gtk3-module
+	# Desktop
+	dbus-broker
+	hidpi-daemon
+	flatpak
+	system76-scheduler
+	touchegg
+
+	#####################
+	## End POP-DESKTOP ##
+	#####################
+
+	# Mkosi packages
+    	dracut
+RemovePackages=
+	ibus-mozc
+	irqbalance
+	mozc-utils-gui
+	pop-installer-session
+	snapd
+	ubuntu-session
+	ubuntu-wallpapers
+	unattended-upgrades
+	yaru-theme-gnome-shell
+
+[Content]
+cache=./mkosi.cache
+base-packages=False
+root-size=9663676416
+with-network=True
+
+[Validation]
+Password=password

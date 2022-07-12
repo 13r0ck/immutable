@@ -1,0 +1,12 @@
+# Build artifacts
+.#*
+*.qemu
+*.raw
+*.manifest
+
+# Keep cache folder, but not contents
+mkosi.cache/*
+!mkosi.cache/.gitkeep
+
+# Misc
+*.gpg
